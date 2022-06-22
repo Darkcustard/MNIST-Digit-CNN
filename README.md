@@ -12,10 +12,9 @@ I created a jupyter notbook to handle the classifier built using Keras. The mode
 an 9x1 array of probabilities for the corrisponding digits from 0-9.
 
 The classifier was trained on the MNIST-handwritten digit classification dataset and uses functions to convert
-betweet decimal and the 9x1 array:     3 = [0,0,0,1,0,0,0,0,0,0]
+between decimal and the 10x1 array:     3 = [0,0,0,1,0,0,0,0,0,0]
 
 the test accuracy after 5 epochs was ~ 98.1% and I have not yet optimized the hyperparams. 
-
 
 I then used my 'pygame_menu' library to build a GUI where users can draw digits then query the classifier which returns
 its output to the console.
