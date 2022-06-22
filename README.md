@@ -1,4 +1,4 @@
-============================================== Usage ================================================================
+# Usage
 
 1: Make sure you have the following dependancies installed: Tensorflow, Keras, pygame
 2: Run Query.py using python.
@@ -6,7 +6,7 @@
 4: Press the query button and the AI will output a digit to the console
 
 
-============================================== Devlog ==============================================================
+# Devlog
 
 I created a jupyter notbook to handle the classifier built using Keras. The model Takes in a 28x28x1 image and outputs
 an 9x1 array of probabilities for the corrisponding digits from 0-9.
