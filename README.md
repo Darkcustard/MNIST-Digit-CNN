@@ -9,7 +9,7 @@
 # Devlog
 
 I created a jupyter notbook to handle the classifier built using Keras. The model Takes in a 28x28x1 image and outputs
-an 9x1 array of probabilities for the corrisponding digits from 0-9.
+an 10x1 array of probabilities for the corrisponding digits from 0-9.
 
 The classifier was trained on the MNIST-handwritten digit classification dataset and uses functions to convert
 between decimal and the 10x1 array:     3 = [0,0,0,1,0,0,0,0,0,0]
