@@ -67,7 +67,7 @@ def queryAi():
 
     classifier = models.load_model('classifier.ai')
     output = list(classifier.predict(image)[0])
-    digit_value = output.index(max(output))+1
+    digit_value = output.index(max(output))
     
     print(digit_value)
     
