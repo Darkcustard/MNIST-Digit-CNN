@@ -31,3 +31,4 @@ its output to the console.
 * Caught logical error where 0 was ommitted from the possible responses.
 * Increased filters in secondary Conv2D layer from 16 - 32.
 * Split Test set into Test and Validate.
+* Changed Conv2D sizes from 2x2 to 3x3.
