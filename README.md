@@ -1,6 +1,6 @@
 # Usage
 
-1. Make sure you have the following dependancies installed: Tensorflow, Keras, pygame
+1. Make sure you have the dependancies found under "requirements.txt"
 2. Run Query.py using python.
 3. Draw and manipulate the drawspace using the GUI.
 4. Press the query button and the AI will output a digit to the console
