@@ -1,0 +1,3 @@
+[submodule "pygame_menu"]
+	path = pygame_menu
+	url = https://github.com/Darkcustard/pymenu.git
