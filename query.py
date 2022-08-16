@@ -1,4 +1,4 @@
-import pygame_menu
+import pymenu
 import pygame
 import numpy
 
@@ -10,14 +10,14 @@ pixels = []
 
 
 #region general ui
-background = pygame_menu.Panel(win,
+background = pymenu.Panel(win,
     {
         "pos": (0,0),
         "size": (500,500),
         "color": (130,168,200),
     })
 
-foreground = pygame_menu.panel(win,
+foreground = pymenu.Panel(win,
     {
         "pos": (15,15),
         "size": (470,470),
@@ -33,24 +33,22 @@ def clearScreen():
         for pixel in row:
             pixel.color = (0,0,0)
 
-button_clear = pygame_menu.button(win,
+button_clear = pymenu.Button(win,
     {
-        "pos": (405,5),
+        "pos": (405,25),
         "size": (60,30),
         "color": (220,220,230),
         "parent": foreground,
         "color_hover": (210,210,220),
         "color_clicked": (200,200,210),
-        "function": clearScreen,
+        "function_up": clearScreen,
+
+        "text" : "Clear",
+        "text_pos" : (10,8),
+        "text_size" : 20,
     })
 
-pygame_menu.text(win,
-    {
-        "text": "clear",
-        "pos": (29,24),
-        "size": 20,
-        "parent": button_clear,
-    })
+
 
 def queryAi():
 
@@ -74,35 +72,31 @@ def queryAi():
     
 
 
-button_query = pygame_menu.button(win,
+button_query = pymenu.Button(win,
     {
-        "pos": (405,40),
+        "pos": (405,65),
         "size": (60,30),
         "color": (220,220,230),
         "parent": foreground,
         "color_hover": (210,210,220),
         "color_clicked": (200,200,210),
-        "function": queryAi,
+        "function_up": queryAi,
+        
+        "text" : "Query",
+        "text_pos" : (10,8),
+        "text_size" : 20,
 
 
     })
 
-pygame_menu.text(win,
-    {
-        "text": "query",
-        "pos": (29,24),
-        "size": 19,
-        "parent": button_query,
-    })
-#endregion
 
 #region drawspace
-drawspace_panel = pygame_menu.panel(win,
+drawspace_panel = pymenu.Panel(win,
     {
         "pos":(70,150),
         "parent": background,
         "size":(280,280),
-        "color": (255,255,255),
+        "color": (0,0,0),
     })
 
 
@@ -113,9 +107,9 @@ for y in range(28):
 
     for x in range(28):
         
-        row.append(pygame_menu.panel(win,
+        row.append(pymenu.Panel(win,
             {
-                "pos":(x*10,y*10),
+                "pos":(70+x*10,150+y*10),
                 "color":(0,0,0),
                 "size":(10,10),
                 "parent": drawspace_panel,
