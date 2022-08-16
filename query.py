@@ -10,7 +10,7 @@ pixels = []
 
 
 #region general ui
-background = pygame_menu.panel(win,
+background = pygame_menu.Panel(win,
     {
         "pos": (0,0),
         "size": (500,500),
