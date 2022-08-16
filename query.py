@@ -57,7 +57,8 @@ def queryAi():
     for y in pixels:
         row = []
         for x in y:
-            row.append(sum(x.color)/3)
+            row.append((sum(x.color)/3)/255)
+            print(row)
         image_raw.append(row)
     
     image = numpy.array(image_raw)
