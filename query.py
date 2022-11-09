@@ -1,6 +1,7 @@
 import pymenu
 import pygame
 import numpy
+from math import sqrt
 
 from keras import models
 
@@ -58,7 +59,6 @@ def queryAi():
         row = []
         for x in y:
             row.append((sum(x.color)/3)/255)
-            print(row)
         image_raw.append(row)
     
     image = numpy.array(image_raw)
@@ -71,8 +71,6 @@ def queryAi():
     print(digit_value)
     
     
-
-
 button_query = pymenu.Button(win,
     {
         "pos": (405,65),
@@ -118,6 +116,21 @@ for y in range(28):
 
     pixels.append(row)
 
+def handleDrawing(pixels):
+
+    radius = 12
+    x, y = pygame.mouse.get_pos()
+
+    for row in pixels:
+        for pixel in row:
+
+            center = (pixel.pos[0]+pixel.size[0]/2,pixel.pos[1]+pixel.size[1]/2)
+            distance = sqrt((center[0]-x)**2+(center[1]-y)**2)
+
+            if distance < radius:
+
+                pixel.color = (255,255,255)
+
 
 
 
@@ -134,13 +147,11 @@ while run:
 
     #checking if mouse clicked
     left, _, _ = pygame.mouse.get_pressed()
-    if left:
+    
         
-        for row in pixels:
-            for pixel in row:
-                if pixel.checkHover():
-                    pixel.color = (255,255,255)
+    
 
     background.draw()
-
+    if left:
+        handleDrawing(pixels)
     pygame.display.update()
